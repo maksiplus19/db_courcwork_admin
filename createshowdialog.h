@@ -1,7 +1,7 @@
 #ifndef CREATESHOWDIALOG_H
 #define CREATESHOWDIALOG_H
 
-#include <QtWidgets/QDialog>
+#include <QDialog>
 
 namespace Ui {
 class CreateShowDialog;

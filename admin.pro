@@ -6,7 +6,7 @@
 
 QT       += core gui sql
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets sql
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = admin
 TEMPLATE = app
@@ -27,14 +27,17 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     createepisodedialog.cpp \
-    createshowdialog.cpp
+    createshowdialog.cpp \
+    deldialog.cpp
 
 HEADERS += \
         mainwindow.h \
     createepisodedialog.h \
-    createshowdialog.h
+    createshowdialog.h \
+    deldialog.h
 
 FORMS += \
         mainwindow.ui \
     createshowdialog.ui \
-    createepisodedialog.ui
+    createepisodedialog.ui \
+    deldialog.ui

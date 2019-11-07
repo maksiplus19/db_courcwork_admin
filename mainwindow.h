@@ -1,14 +1,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtWidgets/QMainWindow>
+#include <QMainWindow>
+#include <QDebug>
+#include <QTimer>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlTableModel>
 #include <QtSql/QSqlQuery>
+#include <QtSql/QSqlError>
 #include "createshowdialog.h"
 #include "createepisodedialog.h"
-#include <QtSql/QSqlError>
-#include <QDebug>
+#include "deldialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -31,13 +33,17 @@ private slots:
 
     void on_actionDelEpisode_triggered();
 
-    void on_comboBox_currentIndexChanged(int index);
+    void on_timer_timeout();
 
 private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
-    QSqlTableModel *model;
+    QSqlTableModel *showModel;
+    QSqlTableModel *episodeModel;
+    QSqlTableModel *joinModel;
     QSqlQuery query;
+
+    QTimer *timer;
 };
 
 #endif // MAINWINDOW_H
